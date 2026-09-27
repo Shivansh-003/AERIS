@@ -1,0 +1,72 @@
+# Environments & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv
+venv/
+ENV/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.turbo/
+.npm
+*.tsbuildinfo
+next-env.d.ts
+
+# Data & Datasets (keep raw and processed data local)
+data/raw/*.csv
+data/raw/*.parquet
+data/processed/*.parquet
+data/processed/*.npy
+data/processed/*.npz
+!data/raw/README.md
+!data/processed/README.md
+
+# Model Artifacts & Checkpoints
+artifacts/checkpoints/*.pt
+artifacts/checkpoints/*.joblib
+artifacts/checkpoints/*.onnx
+artifacts/scalers/*.joblib
+!artifacts/README.md
+
+# Logs & Temporary Files
+*.log
+logs/
+temp/
+tmp/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
