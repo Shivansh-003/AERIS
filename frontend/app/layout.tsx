@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AERIS — Environmental Risk & Intelligence System",
-  description: "AI-Powered Air Quality Forecasting, Fuzzy Attention & Spatio-Temporal Intelligence Platform",
+  description:
+    "AI-Powered Air Quality Forecasting, Fuzzy Attention & Spatio-Temporal Intelligence Platform",
 };
 
 export default function RootLayout({
@@ -21,9 +22,11 @@ export default function RootLayout({
                 A
               </div>
               <div>
-                <span className="font-bold tracking-tight text-white text-lg">AERIS</span>
+                <span className="font-bold tracking-tight text-white text-lg">
+                  AERIS
+                </span>
                 <span className="ml-2 text-xs font-medium text-cyan-400 border border-cyan-500/30 px-2 py-0.5 rounded-full bg-cyan-950/40">
-                  Phase 1 Dev Shell
+                  Development Build
                 </span>
               </div>
             </div>
@@ -31,7 +34,7 @@ export default function RootLayout({
             <div className="flex items-center space-x-4">
               <div className="hidden sm:flex items-center space-x-2 text-xs text-slate-400 bg-slate-900/80 px-3 py-1.5 rounded-md border border-slate-800">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>System Initialized (Phase 1)</span>
+                <span>System Initialized</span>
               </div>
             </div>
           </div>

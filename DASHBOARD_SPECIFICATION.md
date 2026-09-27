@@ -1,7 +1,6 @@
 # AERIS: Dashboard & User Interface Design Specification
 **Adaptive Environmental Risk & Intelligence System**
-*Document Version: 1.0.0 — Phase 0 UI/UX Specification*
-*Date: September 2026*
+*UI/UX Design, Visual Hierarchy & Analytical View Specifications*
 
 ---
 

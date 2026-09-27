@@ -1,7 +1,6 @@
 # AERIS: System Architecture & Design Specification
 **Adaptive Environmental Risk & Intelligence System**
-*Document Version: 1.0.0 — Phase 0 Architecture*
-*Date: September 2026*
+*System Architecture & Data Pipeline Specification*
 
 ---
 

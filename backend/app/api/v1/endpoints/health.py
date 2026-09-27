@@ -21,7 +21,7 @@ async def get_health(
     uptime = time.time() - START_TIME
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
-    # In Phase 1, models are not yet trained or loaded into the registry.
+    # In initial setup, models are not yet trained or loaded into the registry.
     models_loaded: list[str] = []
 
     return HealthResponse(

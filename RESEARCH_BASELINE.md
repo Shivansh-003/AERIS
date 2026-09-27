@@ -1,7 +1,6 @@
 # AERIS: Research Baseline & Methodological Review
 **Adaptive Environmental Risk & Intelligence System**
-*Document Version: 1.0.0 — Phase 0 Research Foundation*
-*Date: September 2026*
+*Research Foundation & Empirical Evaluation Protocol*
 
 ---
 
@@ -144,7 +143,7 @@ In historical preliminary studies on Indian city air quality subsets, hybrid arc
 | **CNN-BiLSTM + Fuzzy Attn** | $\approx 28.0 - 33.0$ | $\approx 17.0 - 21.0$ | Proposed research target |
 
 > [!IMPORTANT] Scientific Disclaimer
-> The figures above are historical reference ranges from past exploratory work. They are **not** claimed as completed benchmarks in this codebase. Full empirical results will be generated de novo under strict leak-free protocols during Phase 11.
+> The figures above are historical reference ranges from past exploratory work. They are **not** claimed as completed benchmarks in this codebase. Full empirical results will be generated de novo under strict leak-free protocols during model evaluation milestones.
 
 ---
 

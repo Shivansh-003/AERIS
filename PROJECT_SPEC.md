@@ -1,7 +1,6 @@
 # AERIS: Project Specification
 **Adaptive Environmental Risk & Intelligence System**
-*Document Version: 1.0.0 — Phase 0 Specification*
-*Date: September 2026*
+*System Requirements & Research Specification*
 
 ---
 
@@ -236,7 +235,7 @@ While the regression models predict a continuous AQI value $\widehat{\text{AQI}}
 
 ## 21. Expected Deliverables
 
-1. Complete Phase 0 Specification & Architecture suite (7 markdown documents).
+1. Complete technical documentation suite (Architecture, Research Baseline, Model Specs, API, Dashboard).
 2. Clean, modular Python package for preprocessing, sequence generation, modeling, and evaluation.
 3. Model artifact registry containing trained weights, scalers, and metric summaries.
 4. FastAPI backend service with fully documented OpenAPI `/api/v1` routes.

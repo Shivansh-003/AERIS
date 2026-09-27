@@ -3,14 +3,11 @@
 import { useEffect, useState } from "react";
 import {
   Activity,
-  Cpu,
+  CheckCircle2,
   Layers,
   Server,
   Sparkles,
   Workflow,
-  CheckCircle2,
-  Clock,
-  Code2,
 } from "lucide-react";
 import { ApiClient } from "@/lib/api";
 import { HealthStatus } from "@/types";
@@ -49,13 +46,13 @@ export default function HomePage() {
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center space-x-2 rounded-full border border-cyan-500/30 bg-cyan-950/30 px-3 py-1 text-xs font-semibold text-cyan-400">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Phase 1 — Repository & Development Environment</span>
+            <span>Applied Research & Engineering Workspace</span>
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Adaptive Environmental Risk & Intelligence System
           </h1>
           <p className="text-slate-400 text-sm leading-relaxed sm:text-base">
-            Full-stack research platform for explainable air quality forecasting, hybrid
+            Full-stack research platform for air quality forecasting, hybrid
             spatio-temporal neural architectures (1D-CNN + BiLSTM), and fuzzy
             logic-modulated temporal attention.
           </p>
@@ -79,16 +76,16 @@ export default function HomePage() {
               {loading && (
                 <div className="flex items-center space-x-2 text-sm text-slate-400">
                   <div className="h-4 w-4 rounded-full border-2 border-cyan-500 border-t-transparent animate-spin" />
-                  <span>Connecting to backend...</span>
+                  <span>Connecting to backend service...</span>
                 </div>
               )}
 
               {error && (
                 <div className="rounded-lg border border-rose-900/50 bg-rose-950/30 p-3 text-xs text-rose-300">
-                  <p className="font-semibold">Backend Offline / Unreachable</p>
+                  <p className="font-semibold">Backend Service Offline</p>
                   <p className="mt-1 text-slate-400">{error}</p>
                   <p className="mt-2 text-[10px] text-slate-500 font-mono">
-                    Start backend via: uvicorn backend.app.main:app --port 8000
+                    Start backend: uvicorn backend.app.main:app --port 8000
                   </p>
                 </div>
               )}
@@ -123,41 +120,41 @@ export default function HomePage() {
           <div className="mt-6 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex items-center justify-between">
             <span>REST API (OpenAPI 3.1)</span>
             <span className="text-emerald-500 flex items-center gap-1">
-              <CheckCircle2 className="h-3 w-3" /> Pydantic v2
+              <CheckCircle2 className="h-3 w-3" /> Operational
             </span>
           </div>
         </div>
 
-        {/* Development Roadmap Preview */}
+        {/* Development Milestones Overview */}
         <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-6 shadow-md flex flex-col justify-between">
           <div>
             <div className="flex items-center space-x-2.5 pb-4 border-b border-slate-800/80">
               <Workflow className="h-5 w-5 text-cyan-400" />
-              <h3 className="font-semibold text-white">Development Roadmap</h3>
+              <h3 className="font-semibold text-white">Engineering Milestones</h3>
             </div>
 
             <div className="mt-4 space-y-2 text-xs">
               <div className="flex items-center justify-between p-2 rounded-md bg-emerald-950/20 border border-emerald-800/30">
-                <span className="font-semibold text-emerald-300">Phase 0: Research Design</span>
-                <span className="text-[10px] text-emerald-400 font-bold">DONE</span>
+                <span className="font-semibold text-emerald-300">M1: Project Foundation</span>
+                <span className="text-[10px] text-emerald-400 font-bold">COMPLETE</span>
+              </div>
+              <div className="flex items-center justify-between p-2 rounded-md bg-emerald-950/20 border border-emerald-800/30">
+                <span className="font-semibold text-emerald-300">M2: App Infrastructure</span>
+                <span className="text-[10px] text-emerald-400 font-bold">COMPLETE</span>
               </div>
               <div className="flex items-center justify-between p-2 rounded-md bg-cyan-950/30 border border-cyan-800/40">
-                <span className="font-semibold text-cyan-300">Phase 1: Repo & Environment</span>
-                <span className="text-[10px] text-cyan-400 font-bold">CURRENT</span>
+                <span className="font-semibold text-cyan-300">M3: Data Ingestion & Checks</span>
+                <span className="text-[10px] text-cyan-400 font-bold">NEXT</span>
               </div>
               <div className="flex items-center justify-between p-2 rounded-md bg-slate-950/40 border border-slate-800/40 text-slate-400">
-                <span>Phase 2: Dataset Acquisition</span>
-                <span className="text-[10px] text-slate-500">PENDING</span>
-              </div>
-              <div className="flex items-center justify-between p-2 rounded-md bg-slate-950/40 border border-slate-800/40 text-slate-400">
-                <span>Phases 3–12: Modeling & XAI</span>
-                <span className="text-[10px] text-slate-500">PENDING</span>
+                <span>M4–M9: Models, XAI & Serving</span>
+                <span className="text-[10px] text-slate-500">PLANNED</span>
               </div>
             </div>
           </div>
 
           <div className="mt-6 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex items-center justify-between">
-            <span>16 Phases Total</span>
+            <span>Milestone-Driven Roadmap</span>
             <span className="font-mono text-cyan-400">DEVELOPMENT_PLAN.md</span>
           </div>
         </div>
@@ -199,8 +196,8 @@ export default function HomePage() {
           </div>
 
           <div className="mt-6 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex items-center justify-between">
-            <span>Target: Phase 14</span>
-            <span className="font-mono text-cyan-400">DASHBOARD_SPEC.md</span>
+            <span>Interface Blueprint</span>
+            <span className="font-mono text-cyan-400">DASHBOARD_SPECIFICATION.md</span>
           </div>
         </div>
       </div>

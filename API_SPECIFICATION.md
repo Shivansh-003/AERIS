@@ -1,13 +1,12 @@
 # AERIS: REST API Specification (OpenAPI 3.1)
 **Adaptive Environmental Risk & Intelligence System**
-*Document Version: 1.0.0 — Phase 0 API Contract*
-*Date: September 2026*
+*REST Endpoints & Request/Response Contracts*
 
 ---
 
 ## 1. Overview & Architectural Principles
 
-The AERIS API provides high-performance, asynchronous REST endpoints for model inference, time-series forecasting, explainability attribution, fuzzy intelligence analysis, and counterfactual simulation.
+The AERIS API provides asynchronous REST endpoints for health monitoring, model inference, time-series forecasting, explainability attribution, fuzzy intelligence analysis, and counterfactual simulation.
 
 * **Base URL:** `/api/v1`
 * **Protocol:** HTTP/1.1 and HTTP/2 over TLS
@@ -17,7 +16,7 @@ The AERIS API provides high-performance, asynchronous REST endpoints for model i
 * **Lifecycle:** Model weights and preprocessors are loaded during ASGI startup into a singleton in-memory `ModelRegistry`.
 
 > [!NOTE] Implementation Status
-> This document specifies the future API contract to be implemented in **Phase 13 (FastAPI Backend)**. No endpoints are currently running during Phase 0.
+> The core FastAPI service, CORS middleware, RFC 7807 error handlers, and `/api/v1/health` endpoint are fully operational. Prediction, forecasting, and simulation endpoints defined in this document represent the API contract to be enabled as model artifacts are integrated.
 
 ---
 

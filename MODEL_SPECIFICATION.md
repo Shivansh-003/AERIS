@@ -1,7 +1,6 @@
 # AERIS: Model Specification & Deep Learning Design
 **Adaptive Environmental Risk & Intelligence System**
-*Document Version: 1.0.0 — Phase 0 Model Design*
-*Date: September 2026*
+*Mathematical Formulations & Architectural Designs*
 
 ---
 
@@ -231,7 +230,7 @@ $$\widehat{\text{AQI}}_{t+1} = \mathbf{W}_2 \left(\text{ReLU}(\mathbf{W}_1 \math
 
 ## 11. Systematic Ablation Study Plan
 
-To isolate and prove the contribution of every architectural component, the following ablation grid will be executed in Phase 11:
+To isolate and prove the contribution of every architectural component, the following ablation grid will be executed during evaluation benchmarking:
 
 | Ablation Variant | Conv1D | BiLSTM | Temporal Attention | Fuzzy ROC Modulation | Target Research Question |
 | :--- | :---: | :---: | :---: | :---: | :--- |
