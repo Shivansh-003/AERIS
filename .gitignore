@@ -52,6 +52,9 @@ data/raw/*.parquet
 data/processed/*.parquet
 data/processed/*.npy
 data/processed/*.npz
+data/processed/sequences/*.pt
+data/processed/sequences/*.npz
+data/processed/sequences/*.npy
 !data/raw/README.md
 !data/processed/README.md
 

@@ -15,6 +15,16 @@ from backend.app.data.eda import (
     run_eda_pipeline,
     save_eda_report,
 )
+from backend.app.data.feature_config import FeatureConfig
+from backend.app.data.features import (
+    compute_calendar_features,
+    compute_lag_features,
+    compute_roc_features,
+    compute_rolling_features,
+    compute_volatility_features,
+    engineer_all_features,
+    fit_and_scale_engineered_features,
+)
 from backend.app.data.ingestion import (
     generate_dataset_profile,
     load_raw_csv,
@@ -43,6 +53,12 @@ from backend.app.data.schema import (
     TARGET_COLUMN,
     TARGET_DTYPES,
     ValidationReport,
+)
+from backend.app.data.sequence_artifacts import SequenceArtifacts
+from backend.app.data.sequence_config import SequenceConfig
+from backend.app.data.sequences import (
+    build_sequences_pipeline,
+    extract_city_sequences,
 )
 
 __all__ = [
@@ -82,4 +98,16 @@ __all__ = [
     "fit_and_apply_imputation",
     "fit_and_apply_scalers",
     "run_preprocessing_pipeline",
+    "FeatureConfig",
+    "compute_calendar_features",
+    "compute_lag_features",
+    "compute_rolling_features",
+    "compute_roc_features",
+    "compute_volatility_features",
+    "engineer_all_features",
+    "fit_and_scale_engineered_features",
+    "SequenceConfig",
+    "SequenceArtifacts",
+    "extract_city_sequences",
+    "build_sequences_pipeline",
 ]

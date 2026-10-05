@@ -45,13 +45,43 @@ python scripts/run_eda.py
 * **JSON Analysis Report:** `outputs/eda/eda_report.json`
 * **Visualization Figures:** `outputs/eda/figures/` (contains 9 high-resolution diagnostic plots)
 
-## Future Machine Learning Preprocessing (Milestone 4)
+## Data Preprocessing Pipeline (Data Preparation)
 
-ML-specific transformations are strictly decoupled from data ingestion/EDA and will be implemented in **Milestone 4 — Data Preparation**:
-* Chronological partition splitting (70% Train, 15% Validation, 15% Test) without temporal leakage.
-* City-aware localized linear interpolation for missing values.
-* Feature scaling (`RobustScaler` / `MinMaxScaler`) fitted strictly on training partitions.
-* Sliding lookback window generation ($T = 30$ days) for single-day-ahead ($t+1$) AQI forecasting.
+To execute leak-free chronological partitioning, city-aware forward-fill, training median imputation, and StandardScaler fitting:
+
+```bash
+python scripts/run_preprocessing.py
+```
+
+Outputs generated:
+* `data/processed/train_city_day.parquet` (20,661 records, 70% chronological split per city)
+* `data/processed/val_city_day.parquet` (4,417 records, 15% chronological split per city)
+* `data/processed/test_city_day.parquet` (4,453 records, 15% chronological split per city)
+* `data/artifacts/preprocessing/scaler.joblib` (Fitted strictly on Train)
+* `data/artifacts/preprocessing/preprocessing_metadata.json`
+
+## Feature Engineering & 30-Day Sequence Generation
+
+To generate leakage-safe 30-day lookback sequence tensors for supervised forecasting:
+
+```bash
+python scripts/build_sequences.py
+```
+
+Outputs generated:
+* `data/processed/sequences/train_sequences.pt` / `.npz` : $(15,852, 30, 82)$ input tensor $X$, $(15,852,)$ target vector $y$
+* `data/processed/sequences/val_sequences.pt` / `.npz` : $(4,261, 30, 82)$ input tensor $X$, $(4,261,)$ target vector $y$
+* `data/processed/sequences/test_sequences.pt` / `.npz` : $(4,312, 30, 82)$ input tensor $X$, $(4,312,)$ target vector $y$
+* `data/artifacts/sequences/feature_scaler.joblib` (StandardScaler fitted strictly on training engineered features)
+* `data/artifacts/sequences/sequence_features.json` (Complete 82-feature channel inventory)
+* `data/artifacts/sequences/sequence_metadata.json`
+
+### Sequence Formulation & Integrity Guardrails
+* **Lookback Window ($T=30$ days):** Input matrix $X(t) = [t-29, \dots, t]$ capturing multi-week temporal trajectories.
+* **Forecast Horizon ($H=1$ day):** Supervised prediction target is single-day-ahead AQI $y(t) = \text{AQI}(t+1)$.
+* **Target Validity Filtering:** Evaluates strictly on authentic CPCB observations (`aqi_target_valid == True`). Imputed AQI values are strictly prohibited from becoming ground-truth labels.
+* **City Boundary Isolation:** Windows and backward operations never cross city boundaries.
+* **Continuous History Boundary Policy:** Validation and test sequences use historical preceding context up to time $t$ to forecast targets at $t+1$ without temporal leakage.
 
 ## Version Control Policy
-Raw datasets (`*.csv`, `*.parquet`) and processed binary data files are ignored by git via `.gitignore` to prevent repository bloat while maintaining 100% deterministic reproducibility via the ingestion script.
+Raw datasets (`*.csv`, `*.parquet`), serialized sequence tensors (`*.pt`, `*.npz`), and binary scaler checkpoints (`*.joblib`) are ignored by git via `.gitignore` to prevent repository bloat while maintaining 100% deterministic reproducibility via pipeline CLI scripts.
