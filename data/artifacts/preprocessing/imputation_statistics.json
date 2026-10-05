@@ -1,0 +1,34 @@
+{
+  "strategy": "city_forward_fill_then_train_median",
+  "pipeline_version": "1.0.0",
+  "learned_train_medians": {
+    "PM2.5": 52.39,
+    "PM10": 98.815,
+    "NO": 9.59,
+    "NO2": 20.17,
+    "NOx": 22.93,
+    "NH3": 17.035,
+    "CO": 0.91,
+    "SO2": 9.04,
+    "O3": 28.73,
+    "Benzene": 0.74,
+    "Toluene": 2.2,
+    "Xylene": 0.45,
+    "AQI": 126.0
+  },
+  "feature_order": [
+    "PM2.5",
+    "PM10",
+    "NO",
+    "NO2",
+    "NOx",
+    "NH3",
+    "CO",
+    "SO2",
+    "O3",
+    "Benzene",
+    "Toluene",
+    "Xylene",
+    "AQI"
+  ]
+}

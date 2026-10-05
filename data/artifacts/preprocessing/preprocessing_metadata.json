@@ -1,0 +1,895 @@
+{
+  "metadata_version": "1.0.0",
+  "config": {
+    "input_parquet_path": "data/processed/cleaned_city_day.parquet",
+    "output_processed_dir": "data/processed",
+    "artifacts_dir": "data/artifacts/preprocessing",
+    "scalers_backup_dir": "artifacts/scalers",
+    "metadata_dir": "data/metadata",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "feature_columns": [
+      "PM2.5",
+      "PM10",
+      "NO",
+      "NO2",
+      "NOx",
+      "NH3",
+      "CO",
+      "SO2",
+      "O3",
+      "Benzene",
+      "Toluene",
+      "Xylene"
+    ],
+    "target_column": "AQI",
+    "target_validity_column": "aqi_target_valid",
+    "id_columns": [
+      "City",
+      "Date"
+    ],
+    "derived_category_columns": [
+      "AQI_Bucket"
+    ],
+    "scaler_type": "StandardScaler",
+    "scale_target": true,
+    "imputation_strategy": "city_forward_fill_then_train_median",
+    "pipeline_version": "1.0.0"
+  },
+  "feature_order": [
+    "PM2.5",
+    "PM10",
+    "NO",
+    "NO2",
+    "NOx",
+    "NH3",
+    "CO",
+    "SO2",
+    "O3",
+    "Benzene",
+    "Toluene",
+    "Xylene",
+    "AQI"
+  ],
+  "imputation_medians": {
+    "PM2.5": 52.39,
+    "PM10": 98.815,
+    "NO": 9.59,
+    "NO2": 20.17,
+    "NOx": 22.93,
+    "NH3": 17.035,
+    "CO": 0.91,
+    "SO2": 9.04,
+    "O3": 28.73,
+    "Benzene": 0.74,
+    "Toluene": 2.2,
+    "Xylene": 0.45,
+    "AQI": 126.0
+  },
+  "training_statistics": {
+    "PM2.5": {
+      "mean": 71.83338560573061,
+      "variance": 4573.758400207003,
+      "scale": 67.6295674997778,
+      "median": 52.39,
+      "min": 0.04,
+      "max": 949.99
+    },
+    "PM10": {
+      "mean": 114.49509050868788,
+      "variance": 5929.994448123553,
+      "scale": 77.00645718459948,
+      "median": 98.815,
+      "min": 0.01,
+      "max": 1000.0
+    },
+    "NO": {
+      "mean": 16.871955858864528,
+      "variance": 498.759506822697,
+      "scale": 22.332924278354078,
+      "median": 9.59,
+      "min": 0.02,
+      "max": 287.14
+    },
+    "NO2": {
+      "mean": 26.66131842602004,
+      "variance": 525.6117390197026,
+      "scale": 22.92622382817769,
+      "median": 20.17,
+      "min": 0.01,
+      "max": 362.21
+    },
+    "NOx": {
+      "mean": 33.57818450220222,
+      "variance": 1254.3576494458487,
+      "scale": 35.4169119128962,
+      "median": 22.93,
+      "min": 0.0,
+      "max": 467.63
+    },
+    "NH3": {
+      "mean": 24.230761579788005,
+      "variance": 783.0364786816485,
+      "scale": 27.98278897253897,
+      "median": 17.035,
+      "min": 0.01,
+      "max": 352.89
+    },
+    "CO": {
+      "mean": 2.236904312472775,
+      "variance": 41.21003090846647,
+      "scale": 6.419503945669515,
+      "median": 0.91,
+      "min": 0.0,
+      "max": 175.81
+    },
+    "SO2": {
+      "mean": 15.855682203184744,
+      "variance": 451.85238732439603,
+      "scale": 21.25681978388103,
+      "median": 9.04,
+      "min": 0.04,
+      "max": 193.86
+    },
+    "O3": {
+      "mean": 32.774909733313976,
+      "variance": 501.06142371408214,
+      "scale": 22.38440134812817,
+      "median": 28.73,
+      "min": 0.01,
+      "max": 257.73
+    },
+    "Benzene": {
+      "mean": 3.3111335366148777,
+      "variance": 327.4656251513757,
+      "scale": 18.096011305019008,
+      "median": 0.74,
+      "min": 0.0,
+      "max": 455.03
+    },
+    "Toluene": {
+      "mean": 6.333672619911911,
+      "variance": 347.47212662124775,
+      "scale": 18.640604245068015,
+      "median": 2.2,
+      "min": 0.0,
+      "max": 454.85
+    },
+    "Xylene": {
+      "mean": 1.4462102511979091,
+      "variance": 18.923738437765298,
+      "scale": 4.350142346839388,
+      "median": 0.45,
+      "min": 0.0,
+      "max": 125.18
+    },
+    "AQI": {
+      "mean": 171.96219931271477,
+      "variance": 17529.672401029144,
+      "scale": 132.39966918776324,
+      "median": 126.0,
+      "min": 13.0,
+      "max": 2049.0
+    }
+  },
+  "source_dataset": "data/processed/cleaned_city_day.parquet",
+  "generated_at_utc": "2026-10-04T16:43:02.374199+00:00",
+  "pipeline_version": "1.0.0",
+  "split_summary": {
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "row_counts": {
+      "train": 20661,
+      "val": 4417,
+      "test": 4453,
+      "total": 29531
+    },
+    "overall_dates": {
+      "train": {
+        "start": "2015-01-01",
+        "end": "2020-05-28"
+      },
+      "val": {
+        "start": "2018-11-07",
+        "end": "2020-06-13"
+      },
+      "test": {
+        "start": "2019-09-04",
+        "end": "2020-07-01"
+      }
+    },
+    "city_splits": {
+      "Ahmedabad": {
+        "total_rows": 2009,
+        "train_rows": 1406,
+        "val_rows": 301,
+        "test_rows": 302,
+        "train_dates": {
+          "start": "2015-01-01",
+          "end": "2018-11-06"
+        },
+        "val_dates": {
+          "start": "2018-11-07",
+          "end": "2019-09-03"
+        },
+        "test_dates": {
+          "start": "2019-09-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Aizawl": {
+        "total_rows": 113,
+        "train_rows": 79,
+        "val_rows": 16,
+        "test_rows": 18,
+        "train_dates": {
+          "start": "2020-03-11",
+          "end": "2020-05-28"
+        },
+        "val_dates": {
+          "start": "2020-05-29",
+          "end": "2020-06-13"
+        },
+        "test_dates": {
+          "start": "2020-06-14",
+          "end": "2020-07-01"
+        }
+      },
+      "Amaravati": {
+        "total_rows": 951,
+        "train_rows": 665,
+        "val_rows": 142,
+        "test_rows": 144,
+        "train_dates": {
+          "start": "2017-11-24",
+          "end": "2019-09-19"
+        },
+        "val_dates": {
+          "start": "2019-09-20",
+          "end": "2020-02-08"
+        },
+        "test_dates": {
+          "start": "2020-02-09",
+          "end": "2020-07-01"
+        }
+      },
+      "Amritsar": {
+        "total_rows": 1221,
+        "train_rows": 854,
+        "val_rows": 183,
+        "test_rows": 184,
+        "train_dates": {
+          "start": "2017-02-27",
+          "end": "2019-06-30"
+        },
+        "val_dates": {
+          "start": "2019-07-01",
+          "end": "2019-12-30"
+        },
+        "test_dates": {
+          "start": "2019-12-31",
+          "end": "2020-07-01"
+        }
+      },
+      "Bengaluru": {
+        "total_rows": 2009,
+        "train_rows": 1406,
+        "val_rows": 301,
+        "test_rows": 302,
+        "train_dates": {
+          "start": "2015-01-01",
+          "end": "2018-11-06"
+        },
+        "val_dates": {
+          "start": "2018-11-07",
+          "end": "2019-09-03"
+        },
+        "test_dates": {
+          "start": "2019-09-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Bhopal": {
+        "total_rows": 289,
+        "train_rows": 202,
+        "val_rows": 43,
+        "test_rows": 44,
+        "train_dates": {
+          "start": "2019-09-17",
+          "end": "2020-04-05"
+        },
+        "val_dates": {
+          "start": "2020-04-06",
+          "end": "2020-05-18"
+        },
+        "test_dates": {
+          "start": "2020-05-19",
+          "end": "2020-07-01"
+        }
+      },
+      "Brajrajnagar": {
+        "total_rows": 938,
+        "train_rows": 656,
+        "val_rows": 140,
+        "test_rows": 142,
+        "train_dates": {
+          "start": "2017-12-07",
+          "end": "2019-09-23"
+        },
+        "val_dates": {
+          "start": "2019-09-24",
+          "end": "2020-02-10"
+        },
+        "test_dates": {
+          "start": "2020-02-11",
+          "end": "2020-07-01"
+        }
+      },
+      "Chandigarh": {
+        "total_rows": 304,
+        "train_rows": 212,
+        "val_rows": 45,
+        "test_rows": 47,
+        "train_dates": {
+          "start": "2019-09-02",
+          "end": "2020-03-31"
+        },
+        "val_dates": {
+          "start": "2020-04-01",
+          "end": "2020-05-15"
+        },
+        "test_dates": {
+          "start": "2020-05-16",
+          "end": "2020-07-01"
+        }
+      },
+      "Chennai": {
+        "total_rows": 2009,
+        "train_rows": 1406,
+        "val_rows": 301,
+        "test_rows": 302,
+        "train_dates": {
+          "start": "2015-01-01",
+          "end": "2018-11-06"
+        },
+        "val_dates": {
+          "start": "2018-11-07",
+          "end": "2019-09-03"
+        },
+        "test_dates": {
+          "start": "2019-09-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Coimbatore": {
+        "total_rows": 386,
+        "train_rows": 270,
+        "val_rows": 57,
+        "test_rows": 59,
+        "train_dates": {
+          "start": "2019-06-12",
+          "end": "2020-03-07"
+        },
+        "val_dates": {
+          "start": "2020-03-08",
+          "end": "2020-05-03"
+        },
+        "test_dates": {
+          "start": "2020-05-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Delhi": {
+        "total_rows": 2009,
+        "train_rows": 1406,
+        "val_rows": 301,
+        "test_rows": 302,
+        "train_dates": {
+          "start": "2015-01-01",
+          "end": "2018-11-06"
+        },
+        "val_dates": {
+          "start": "2018-11-07",
+          "end": "2019-09-03"
+        },
+        "test_dates": {
+          "start": "2019-09-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Ernakulam": {
+        "total_rows": 162,
+        "train_rows": 113,
+        "val_rows": 24,
+        "test_rows": 25,
+        "train_dates": {
+          "start": "2020-01-22",
+          "end": "2020-05-13"
+        },
+        "val_dates": {
+          "start": "2020-05-14",
+          "end": "2020-06-06"
+        },
+        "test_dates": {
+          "start": "2020-06-07",
+          "end": "2020-07-01"
+        }
+      },
+      "Gurugram": {
+        "total_rows": 1679,
+        "train_rows": 1175,
+        "val_rows": 251,
+        "test_rows": 253,
+        "train_dates": {
+          "start": "2015-11-27",
+          "end": "2019-02-13"
+        },
+        "val_dates": {
+          "start": "2019-02-14",
+          "end": "2019-10-22"
+        },
+        "test_dates": {
+          "start": "2019-10-23",
+          "end": "2020-07-01"
+        }
+      },
+      "Guwahati": {
+        "total_rows": 502,
+        "train_rows": 351,
+        "val_rows": 75,
+        "test_rows": 76,
+        "train_dates": {
+          "start": "2019-02-16",
+          "end": "2020-02-01"
+        },
+        "val_dates": {
+          "start": "2020-02-02",
+          "end": "2020-04-16"
+        },
+        "test_dates": {
+          "start": "2020-04-17",
+          "end": "2020-07-01"
+        }
+      },
+      "Hyderabad": {
+        "total_rows": 2006,
+        "train_rows": 1404,
+        "val_rows": 300,
+        "test_rows": 302,
+        "train_dates": {
+          "start": "2015-01-04",
+          "end": "2018-11-07"
+        },
+        "val_dates": {
+          "start": "2018-11-08",
+          "end": "2019-09-03"
+        },
+        "test_dates": {
+          "start": "2019-09-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Jaipur": {
+        "total_rows": 1114,
+        "train_rows": 779,
+        "val_rows": 167,
+        "test_rows": 168,
+        "train_dates": {
+          "start": "2017-06-14",
+          "end": "2019-08-01"
+        },
+        "val_dates": {
+          "start": "2019-08-02",
+          "end": "2020-01-15"
+        },
+        "test_dates": {
+          "start": "2020-01-16",
+          "end": "2020-07-01"
+        }
+      },
+      "Jorapokhar": {
+        "total_rows": 1169,
+        "train_rows": 818,
+        "val_rows": 175,
+        "test_rows": 176,
+        "train_dates": {
+          "start": "2017-04-20",
+          "end": "2019-07-16"
+        },
+        "val_dates": {
+          "start": "2019-07-17",
+          "end": "2020-01-07"
+        },
+        "test_dates": {
+          "start": "2020-01-08",
+          "end": "2020-07-01"
+        }
+      },
+      "Kochi": {
+        "total_rows": 162,
+        "train_rows": 113,
+        "val_rows": 24,
+        "test_rows": 25,
+        "train_dates": {
+          "start": "2020-01-22",
+          "end": "2020-05-13"
+        },
+        "val_dates": {
+          "start": "2020-05-14",
+          "end": "2020-06-06"
+        },
+        "test_dates": {
+          "start": "2020-06-07",
+          "end": "2020-07-01"
+        }
+      },
+      "Kolkata": {
+        "total_rows": 814,
+        "train_rows": 569,
+        "val_rows": 122,
+        "test_rows": 123,
+        "train_dates": {
+          "start": "2018-04-10",
+          "end": "2019-10-30"
+        },
+        "val_dates": {
+          "start": "2019-10-31",
+          "end": "2020-02-29"
+        },
+        "test_dates": {
+          "start": "2020-03-01",
+          "end": "2020-07-01"
+        }
+      },
+      "Lucknow": {
+        "total_rows": 2009,
+        "train_rows": 1406,
+        "val_rows": 301,
+        "test_rows": 302,
+        "train_dates": {
+          "start": "2015-01-01",
+          "end": "2018-11-06"
+        },
+        "val_dates": {
+          "start": "2018-11-07",
+          "end": "2019-09-03"
+        },
+        "test_dates": {
+          "start": "2019-09-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Mumbai": {
+        "total_rows": 2009,
+        "train_rows": 1406,
+        "val_rows": 301,
+        "test_rows": 302,
+        "train_dates": {
+          "start": "2015-01-01",
+          "end": "2018-11-06"
+        },
+        "val_dates": {
+          "start": "2018-11-07",
+          "end": "2019-09-03"
+        },
+        "test_dates": {
+          "start": "2019-09-04",
+          "end": "2020-07-01"
+        }
+      },
+      "Patna": {
+        "total_rows": 1858,
+        "train_rows": 1300,
+        "val_rows": 278,
+        "test_rows": 280,
+        "train_dates": {
+          "start": "2015-06-01",
+          "end": "2018-12-21"
+        },
+        "val_dates": {
+          "start": "2018-12-22",
+          "end": "2019-09-25"
+        },
+        "test_dates": {
+          "start": "2019-09-26",
+          "end": "2020-07-01"
+        }
+      },
+      "Shillong": {
+        "total_rows": 310,
+        "train_rows": 217,
+        "val_rows": 46,
+        "test_rows": 47,
+        "train_dates": {
+          "start": "2019-08-27",
+          "end": "2020-03-30"
+        },
+        "val_dates": {
+          "start": "2020-03-31",
+          "end": "2020-05-15"
+        },
+        "test_dates": {
+          "start": "2020-05-16",
+          "end": "2020-07-01"
+        }
+      },
+      "Talcher": {
+        "total_rows": 925,
+        "train_rows": 647,
+        "val_rows": 138,
+        "test_rows": 140,
+        "train_dates": {
+          "start": "2017-12-20",
+          "end": "2019-09-27"
+        },
+        "val_dates": {
+          "start": "2019-09-28",
+          "end": "2020-02-12"
+        },
+        "test_dates": {
+          "start": "2020-02-13",
+          "end": "2020-07-01"
+        }
+      },
+      "Thiruvananthapuram": {
+        "total_rows": 1112,
+        "train_rows": 778,
+        "val_rows": 166,
+        "test_rows": 168,
+        "train_dates": {
+          "start": "2017-06-16",
+          "end": "2019-08-02"
+        },
+        "val_dates": {
+          "start": "2019-08-03",
+          "end": "2020-01-15"
+        },
+        "test_dates": {
+          "start": "2020-01-16",
+          "end": "2020-07-01"
+        }
+      },
+      "Visakhapatnam": {
+        "total_rows": 1462,
+        "train_rows": 1023,
+        "val_rows": 219,
+        "test_rows": 220,
+        "train_dates": {
+          "start": "2016-07-01",
+          "end": "2019-04-19"
+        },
+        "val_dates": {
+          "start": "2019-04-20",
+          "end": "2019-11-24"
+        },
+        "test_dates": {
+          "start": "2019-11-25",
+          "end": "2020-07-01"
+        }
+      }
+    }
+  },
+  "validation_summary": {
+    "total_rows": 29531,
+    "total_columns": 17,
+    "unique_cities": 26,
+    "date_min": "2015-01-01",
+    "date_max": "2020-07-01",
+    "target_validity_column": "aqi_target_valid",
+    "observed_target_count": 24850,
+    "missing_target_count": 4681,
+    "invalid_numeric_counts": {},
+    "negative_counts": {},
+    "infinite_counts": {},
+    "outlier_summary": {
+      "PM2.5": {
+        "q25": 28.82,
+        "q75": 80.59,
+        "iqr": 51.77,
+        "lower_bound": -48.835,
+        "upper_bound": 158.245,
+        "outlier_count": 1982,
+        "outlier_pct": 7.95
+      },
+      "PM10": {
+        "q25": 56.255,
+        "q75": 149.745,
+        "iqr": 93.49,
+        "lower_bound": -83.98,
+        "upper_bound": 289.98,
+        "outlier_count": 1057,
+        "outlier_pct": 5.75
+      },
+      "NO": {
+        "q25": 5.63,
+        "q75": 19.95,
+        "iqr": 14.32,
+        "lower_bound": -15.85,
+        "upper_bound": 41.43,
+        "outlier_count": 2459,
+        "outlier_pct": 9.48
+      },
+      "NO2": {
+        "q25": 11.75,
+        "q75": 37.62,
+        "iqr": 25.87,
+        "lower_bound": -27.055,
+        "upper_bound": 76.425,
+        "outlier_count": 1188,
+        "outlier_pct": 4.58
+      },
+      "NOx": {
+        "q25": 12.82,
+        "q75": 40.1275,
+        "iqr": 27.3075,
+        "lower_bound": -28.1412,
+        "upper_bound": 81.0887,
+        "outlier_count": 1868,
+        "outlier_pct": 7.37
+      },
+      "NH3": {
+        "q25": 8.58,
+        "q75": 30.02,
+        "iqr": 21.44,
+        "lower_bound": -23.58,
+        "upper_bound": 62.18,
+        "outlier_count": 1015,
+        "outlier_pct": 5.29
+      },
+      "CO": {
+        "q25": 0.51,
+        "q75": 1.45,
+        "iqr": 0.94,
+        "lower_bound": -0.9,
+        "upper_bound": 2.86,
+        "outlier_count": 2475,
+        "outlier_pct": 9.01
+      },
+      "SO2": {
+        "q25": 5.67,
+        "q75": 15.22,
+        "iqr": 9.55,
+        "lower_bound": -8.655,
+        "upper_bound": 29.545,
+        "outlier_count": 2578,
+        "outlier_pct": 10.04
+      },
+      "O3": {
+        "q25": 18.86,
+        "q75": 45.57,
+        "iqr": 26.71,
+        "lower_bound": -21.205,
+        "upper_bound": 85.635,
+        "outlier_count": 713,
+        "outlier_pct": 2.8
+      },
+      "Benzene": {
+        "q25": 0.12,
+        "q75": 3.08,
+        "iqr": 2.96,
+        "lower_bound": -4.32,
+        "upper_bound": 7.52,
+        "outlier_count": 1668,
+        "outlier_pct": 6.98
+      },
+      "Toluene": {
+        "q25": 0.6,
+        "q75": 9.15,
+        "iqr": 8.55,
+        "lower_bound": -12.225,
+        "upper_bound": 21.975,
+        "outlier_count": 2427,
+        "outlier_pct": 11.29
+      },
+      "Xylene": {
+        "q25": 0.14,
+        "q75": 3.35,
+        "iqr": 3.21,
+        "lower_bound": -4.675,
+        "upper_bound": 8.165,
+        "outlier_count": 1119,
+        "outlier_pct": 9.8
+      },
+      "AQI": {
+        "q25": 81.0,
+        "q75": 208.0,
+        "iqr": 127.0,
+        "lower_bound": -109.5,
+        "upper_bound": 398.5,
+        "outlier_count": 1358,
+        "outlier_pct": 5.46
+      }
+    }
+  },
+  "target_validity_summary": {
+    "target_validity_column": "aqi_target_valid",
+    "total_observed_targets": 24850,
+    "total_missing_targets": 4681,
+    "train": {
+      "observed": 16277,
+      "missing": 4384,
+      "observed_pct": 78.78
+    },
+    "val": {
+      "observed": 4261,
+      "missing": 156,
+      "observed_pct": 96.47
+    },
+    "test": {
+      "observed": 4312,
+      "missing": 141,
+      "observed_pct": 96.83
+    }
+  },
+  "missing_counts_before_preprocessing": {
+    "PM2.5": 4598,
+    "PM10": 11140,
+    "NO": 3582,
+    "NO2": 3585,
+    "NOx": 4185,
+    "NH3": 10328,
+    "CO": 2059,
+    "SO2": 3854,
+    "O3": 4022,
+    "Benzene": 5623,
+    "Toluene": 8041,
+    "Xylene": 18109,
+    "AQI": 4681
+  },
+  "missing_counts_after_preprocessing": {
+    "train": {
+      "PM2.5": 0,
+      "PM10": 0,
+      "NO": 0,
+      "NO2": 0,
+      "NOx": 0,
+      "NH3": 0,
+      "CO": 0,
+      "SO2": 0,
+      "O3": 0,
+      "Benzene": 0,
+      "Toluene": 0,
+      "Xylene": 0,
+      "AQI": 0
+    },
+    "val": {
+      "PM2.5": 0,
+      "PM10": 0,
+      "NO": 0,
+      "NO2": 0,
+      "NOx": 0,
+      "NH3": 0,
+      "CO": 0,
+      "SO2": 0,
+      "O3": 0,
+      "Benzene": 0,
+      "Toluene": 0,
+      "Xylene": 0,
+      "AQI": 0
+    },
+    "test": {
+      "PM2.5": 0,
+      "PM10": 0,
+      "NO": 0,
+      "NO2": 0,
+      "NOx": 0,
+      "NH3": 0,
+      "CO": 0,
+      "SO2": 0,
+      "O3": 0,
+      "Benzene": 0,
+      "Toluene": 0,
+      "Xylene": 0,
+      "AQI": 0
+    }
+  },
+  "saved_files": {
+    "train_parquet": "data/processed/train_city_day.parquet",
+    "val_parquet": "data/processed/val_city_day.parquet",
+    "test_parquet": "data/processed/test_city_day.parquet"
+  }
+}

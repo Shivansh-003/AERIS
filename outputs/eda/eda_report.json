@@ -1,0 +1,1838 @@
+{
+  "report_metadata": {
+    "title": "AERIS Exploratory Data Analysis & Quality Report",
+    "version": "1.0.0",
+    "source_dataset": "data/processed/cleaned_city_day.parquet"
+  },
+  "dataset_overview": {
+    "row_count": 29531,
+    "column_count": 16,
+    "columns": [
+      "City",
+      "Date",
+      "PM2.5",
+      "PM10",
+      "NO",
+      "NO2",
+      "NOx",
+      "NH3",
+      "CO",
+      "SO2",
+      "O3",
+      "Benzene",
+      "Toluene",
+      "Xylene",
+      "AQI",
+      "AQI_Bucket"
+    ],
+    "data_types": {
+      "City": "string",
+      "Date": "datetime64[us]",
+      "PM2.5": "float64",
+      "PM10": "float64",
+      "NO": "float64",
+      "NO2": "float64",
+      "NOx": "float64",
+      "NH3": "float64",
+      "CO": "float64",
+      "SO2": "float64",
+      "O3": "float64",
+      "Benzene": "float64",
+      "Toluene": "float64",
+      "Xylene": "float64",
+      "AQI": "float64",
+      "AQI_Bucket": "string"
+    },
+    "city_count": 26,
+    "cities": [
+      "Ahmedabad",
+      "Aizawl",
+      "Amaravati",
+      "Amritsar",
+      "Bengaluru",
+      "Bhopal",
+      "Brajrajnagar",
+      "Chandigarh",
+      "Chennai",
+      "Coimbatore",
+      "Delhi",
+      "Ernakulam",
+      "Gurugram",
+      "Guwahati",
+      "Hyderabad",
+      "Jaipur",
+      "Jorapokhar",
+      "Kochi",
+      "Kolkata",
+      "Lucknow",
+      "Mumbai",
+      "Patna",
+      "Shillong",
+      "Talcher",
+      "Thiruvananthapuram",
+      "Visakhapatnam"
+    ],
+    "date_range": {
+      "min_date": "2015-01-01",
+      "max_date": "2020-07-01",
+      "total_days_span": 2009
+    },
+    "observations_per_city": {
+      "Ahmedabad": 2009,
+      "Aizawl": 113,
+      "Amaravati": 951,
+      "Amritsar": 1221,
+      "Bengaluru": 2009,
+      "Bhopal": 289,
+      "Brajrajnagar": 938,
+      "Chandigarh": 304,
+      "Chennai": 2009,
+      "Coimbatore": 386,
+      "Delhi": 2009,
+      "Ernakulam": 162,
+      "Gurugram": 1679,
+      "Guwahati": 502,
+      "Hyderabad": 2006,
+      "Jaipur": 1114,
+      "Jorapokhar": 1169,
+      "Kochi": 162,
+      "Kolkata": 814,
+      "Lucknow": 2009,
+      "Mumbai": 2009,
+      "Patna": 1858,
+      "Shillong": 310,
+      "Talcher": 925,
+      "Thiruvananthapuram": 1112,
+      "Visakhapatnam": 1462
+    }
+  },
+  "missing_value_analysis": {
+    "missing_counts": {
+      "City": 0,
+      "Date": 0,
+      "PM2.5": 4598,
+      "PM10": 11140,
+      "NO": 3582,
+      "NO2": 3585,
+      "NOx": 4185,
+      "NH3": 10328,
+      "CO": 2059,
+      "SO2": 3854,
+      "O3": 4022,
+      "Benzene": 5623,
+      "Toluene": 8041,
+      "Xylene": 18109,
+      "AQI": 4681,
+      "AQI_Bucket": 4681
+    },
+    "missing_percentages": {
+      "City": 0.0,
+      "Date": 0.0,
+      "PM2.5": 15.57,
+      "PM10": 37.72,
+      "NO": 12.13,
+      "NO2": 12.14,
+      "NOx": 14.17,
+      "NH3": 34.97,
+      "CO": 6.97,
+      "SO2": 13.05,
+      "O3": 13.62,
+      "Benzene": 19.04,
+      "Toluene": 27.23,
+      "Xylene": 61.32,
+      "AQI": 15.85,
+      "AQI_Bucket": 15.85
+    },
+    "aqi_missing_count": 4681,
+    "aqi_missing_percentage": 15.85,
+    "pollutant_missing_percentages": {
+      "PM2.5": 15.57,
+      "PM10": 37.72,
+      "NO": 12.13,
+      "NO2": 12.14,
+      "NOx": 14.17,
+      "NH3": 34.97,
+      "CO": 6.97,
+      "SO2": 13.05,
+      "O3": 13.62,
+      "Benzene": 19.04,
+      "Toluene": 27.23,
+      "Xylene": 61.32
+    },
+    "city_missingness": {
+      "Ahmedabad": {
+        "row_count": 2009,
+        "missing_percentages": {
+          "PM2.5": 31.26,
+          "PM10": 79.74,
+          "NO": 30.31,
+          "NO2": 30.26,
+          "NOx": 29.57,
+          "NH3": 100.0,
+          "CO": 30.31,
+          "SO2": 31.86,
+          "O3": 34.1,
+          "Benzene": 24.04,
+          "Toluene": 24.04,
+          "Xylene": 24.09,
+          "AQI": 33.6,
+          "AQI_Bucket": 33.6
+        }
+      },
+      "Aizawl": {
+        "row_count": 113,
+        "missing_percentages": {
+          "PM2.5": 1.77,
+          "PM10": 0.88,
+          "NO": 0.0,
+          "NO2": 0.0,
+          "NOx": 0.0,
+          "NH3": 0.0,
+          "CO": 0.0,
+          "SO2": 0.0,
+          "O3": 7.96,
+          "Benzene": 13.27,
+          "Toluene": 13.27,
+          "Xylene": 100.0,
+          "AQI": 1.77,
+          "AQI_Bucket": 1.77
+        }
+      },
+      "Amaravati": {
+        "row_count": 951,
+        "missing_percentages": {
+          "PM2.5": 6.2,
+          "PM10": 5.78,
+          "NO": 5.78,
+          "NO2": 5.78,
+          "NOx": 5.78,
+          "NH3": 5.78,
+          "CO": 10.2,
+          "SO2": 6.83,
+          "O3": 5.78,
+          "Benzene": 7.89,
+          "Toluene": 7.89,
+          "Xylene": 28.29,
+          "AQI": 11.57,
+          "AQI_Bucket": 11.57
+        }
+      },
+      "Amritsar": {
+        "row_count": 1221,
+        "missing_percentages": {
+          "PM2.5": 10.48,
+          "PM10": 5.16,
+          "NO": 7.62,
+          "NO2": 3.6,
+          "NOx": 23.67,
+          "NH3": 3.44,
+          "CO": 6.22,
+          "SO2": 13.76,
+          "O3": 9.42,
+          "Benzene": 15.97,
+          "Toluene": 17.36,
+          "Xylene": 17.44,
+          "AQI": 7.78,
+          "AQI_Bucket": 7.78
+        }
+      },
+      "Bengaluru": {
+        "row_count": 2009,
+        "missing_percentages": {
+          "PM2.5": 7.27,
+          "PM10": 17.92,
+          "NO": 0.3,
+          "NO2": 0.3,
+          "NOx": 0.2,
+          "NH3": 10.1,
+          "CO": 0.55,
+          "SO2": 0.3,
+          "O3": 7.17,
+          "Benzene": 13.24,
+          "Toluene": 4.63,
+          "Xylene": 100.0,
+          "AQI": 4.93,
+          "AQI_Bucket": 4.93
+        }
+      },
+      "Bhopal": {
+        "row_count": 289,
+        "missing_percentages": {
+          "PM2.5": 3.11,
+          "PM10": 3.11,
+          "NO": 3.11,
+          "NO2": 3.11,
+          "NOx": 3.11,
+          "NH3": 3.11,
+          "CO": 3.11,
+          "SO2": 3.11,
+          "O3": 3.11,
+          "Benzene": 100.0,
+          "Toluene": 100.0,
+          "Xylene": 100.0,
+          "AQI": 3.81,
+          "AQI_Bucket": 3.81
+        }
+      },
+      "Brajrajnagar": {
+        "row_count": 938,
+        "missing_percentages": {
+          "PM2.5": 19.72,
+          "PM10": 18.44,
+          "NO": 25.91,
+          "NO2": 24.95,
+          "NOx": 18.66,
+          "NH3": 24.09,
+          "CO": 15.99,
+          "SO2": 20.58,
+          "O3": 21.64,
+          "Benzene": 18.44,
+          "Toluene": 100.0,
+          "Xylene": 100.0,
+          "AQI": 23.99,
+          "AQI_Bucket": 23.99
+        }
+      },
+      "Chandigarh": {
+        "row_count": 304,
+        "missing_percentages": {
+          "PM2.5": 4.93,
+          "PM10": 0.0,
+          "NO": 1.32,
+          "NO2": 1.32,
+          "NOx": 1.32,
+          "NH3": 3.29,
+          "CO": 0.0,
+          "SO2": 0.0,
+          "O3": 0.0,
+          "Benzene": 0.0,
+          "Toluene": 0.0,
+          "Xylene": 0.0,
+          "AQI": 1.64,
+          "AQI_Bucket": 1.64
+        }
+      },
+      "Chennai": {
+        "row_count": 2009,
+        "missing_percentages": {
+          "PM2.5": 5.82,
+          "PM10": 84.97,
+          "NO": 1.79,
+          "NO2": 1.79,
+          "NOx": 1.79,
+          "NH3": 23.0,
+          "CO": 1.24,
+          "SO2": 1.79,
+          "O3": 2.44,
+          "Benzene": 14.19,
+          "Toluene": 12.59,
+          "Xylene": 100.0,
+          "AQI": 6.22,
+          "AQI_Bucket": 6.22
+        }
+      },
+      "Coimbatore": {
+        "row_count": 386,
+        "missing_percentages": {
+          "PM2.5": 2.07,
+          "PM10": 1.81,
+          "NO": 14.25,
+          "NO2": 2.85,
+          "NOx": 1.04,
+          "NH3": 31.87,
+          "CO": 0.78,
+          "SO2": 0.78,
+          "O3": 0.78,
+          "Benzene": 0.78,
+          "Toluene": 0.78,
+          "Xylene": 100.0,
+          "AQI": 10.88,
+          "AQI_Bucket": 10.88
+        }
+      },
+      "Delhi": {
+        "row_count": 2009,
+        "missing_percentages": {
+          "PM2.5": 0.1,
+          "PM10": 3.83,
+          "NO": 0.1,
+          "NO2": 0.1,
+          "NOx": 0.0,
+          "NH3": 0.45,
+          "CO": 0.0,
+          "SO2": 5.48,
+          "O3": 4.18,
+          "Benzene": 0.0,
+          "Toluene": 0.0,
+          "Xylene": 38.88,
+          "AQI": 0.5,
+          "AQI_Bucket": 0.5
+        }
+      },
+      "Ernakulam": {
+        "row_count": 162,
+        "missing_percentages": {
+          "PM2.5": 2.47,
+          "PM10": 2.47,
+          "NO": 2.47,
+          "NO2": 33.95,
+          "NOx": 2.47,
+          "NH3": 2.47,
+          "CO": 2.47,
+          "SO2": 2.47,
+          "O3": 100.0,
+          "Benzene": 2.47,
+          "Toluene": 2.47,
+          "Xylene": 2.47,
+          "AQI": 5.56,
+          "AQI_Bucket": 5.56
+        }
+      },
+      "Gurugram": {
+        "row_count": 1679,
+        "missing_percentages": {
+          "PM2.5": 9.17,
+          "PM10": 55.93,
+          "NO": 8.22,
+          "NO2": 8.1,
+          "NOx": 26.92,
+          "NH3": 92.91,
+          "CO": 6.49,
+          "SO2": 10.42,
+          "O3": 6.91,
+          "Benzene": 26.33,
+          "Toluene": 36.33,
+          "Xylene": 92.91,
+          "AQI": 13.46,
+          "AQI_Bucket": 13.46
+        }
+      },
+      "Guwahati": {
+        "row_count": 502,
+        "missing_percentages": {
+          "PM2.5": 0.2,
+          "PM10": 0.0,
+          "NO": 0.2,
+          "NO2": 0.2,
+          "NOx": 0.2,
+          "NH3": 0.2,
+          "CO": 0.2,
+          "SO2": 0.2,
+          "O3": 0.2,
+          "Benzene": 1.39,
+          "Toluene": 100.0,
+          "Xylene": 100.0,
+          "AQI": 1.39,
+          "AQI_Bucket": 1.39
+        }
+      },
+      "Hyderabad": {
+        "row_count": 2006,
+        "missing_percentages": {
+          "PM2.5": 5.73,
+          "PM10": 17.7,
+          "NO": 1.4,
+          "NO2": 1.4,
+          "NOx": 0.35,
+          "NH3": 17.95,
+          "CO": 0.25,
+          "SO2": 1.3,
+          "O3": 1.3,
+          "Benzene": 6.33,
+          "Toluene": 6.33,
+          "Xylene": 6.33,
+          "AQI": 6.28,
+          "AQI_Bucket": 6.28
+        }
+      },
+      "Jaipur": {
+        "row_count": 1114,
+        "missing_percentages": {
+          "PM2.5": 1.08,
+          "PM10": 1.26,
+          "NO": 1.44,
+          "NO2": 1.26,
+          "NOx": 10.05,
+          "NH3": 1.35,
+          "CO": 0.63,
+          "SO2": 1.08,
+          "O3": 1.35,
+          "Benzene": 1.97,
+          "Toluene": 2.06,
+          "Xylene": 100.0,
+          "AQI": 1.8,
+          "AQI_Bucket": 1.8
+        }
+      },
+      "Jorapokhar": {
+        "row_count": 1169,
+        "missing_percentages": {
+          "PM2.5": 67.58,
+          "PM10": 23.52,
+          "NO": 23.1,
+          "NO2": 23.1,
+          "NOx": 100.0,
+          "NH3": 31.48,
+          "CO": 43.88,
+          "SO2": 30.03,
+          "O3": 25.15,
+          "Benzene": 100.0,
+          "Toluene": 100.0,
+          "Xylene": 100.0,
+          "AQI": 34.05,
+          "AQI_Bucket": 34.05
+        }
+      },
+      "Kochi": {
+        "row_count": 162,
+        "missing_percentages": {
+          "PM2.5": 0.0,
+          "PM10": 0.0,
+          "NO": 1.23,
+          "NO2": 3.7,
+          "NOx": 0.0,
+          "NH3": 9.88,
+          "CO": 0.0,
+          "SO2": 0.0,
+          "O3": 0.0,
+          "Benzene": 100.0,
+          "Toluene": 0.0,
+          "Xylene": 100.0,
+          "AQI": 2.47,
+          "AQI_Bucket": 2.47
+        }
+      },
+      "Kolkata": {
+        "row_count": 814,
+        "missing_percentages": {
+          "PM2.5": 6.76,
+          "PM10": 6.76,
+          "NO": 3.19,
+          "NO2": 3.07,
+          "NOx": 0.12,
+          "NH3": 0.0,
+          "CO": 0.0,
+          "SO2": 7.62,
+          "O3": 6.14,
+          "Benzene": 0.12,
+          "Toluene": 0.12,
+          "Xylene": 51.6,
+          "AQI": 7.37,
+          "AQI_Bucket": 7.37
+        }
+      },
+      "Lucknow": {
+        "row_count": 2009,
+        "missing_percentages": {
+          "PM2.5": 5.08,
+          "PM10": 100.0,
+          "NO": 1.19,
+          "NO2": 1.19,
+          "NOx": 16.13,
+          "NH3": 49.98,
+          "CO": 1.39,
+          "SO2": 3.19,
+          "O3": 1.34,
+          "Benzene": 4.93,
+          "Toluene": 6.77,
+          "Xylene": 100.0,
+          "AQI": 5.77,
+          "AQI_Bucket": 5.77
+        }
+      },
+      "Mumbai": {
+        "row_count": 2009,
+        "missing_percentages": {
+          "PM2.5": 60.98,
+          "PM10": 62.02,
+          "NO": 61.82,
+          "NO2": 62.37,
+          "NOx": 24.84,
+          "NH3": 80.34,
+          "CO": 1.24,
+          "SO2": 60.73,
+          "O3": 60.33,
+          "Benzene": 10.45,
+          "Toluene": 49.43,
+          "Xylene": 49.48,
+          "AQI": 61.42,
+          "AQI_Bucket": 61.42
+        }
+      },
+      "Patna": {
+        "row_count": 1858,
+        "missing_percentages": {
+          "PM2.5": 17.28,
+          "PM10": 89.72,
+          "NO": 10.93,
+          "NO2": 10.98,
+          "NOx": 10.93,
+          "NH3": 89.72,
+          "CO": 8.13,
+          "SO2": 11.03,
+          "O3": 14.96,
+          "Benzene": 9.26,
+          "Toluene": 9.31,
+          "Xylene": 9.26,
+          "AQI": 21.47,
+          "AQI_Bucket": 21.47
+        }
+      },
+      "Shillong": {
+        "row_count": 310,
+        "missing_percentages": {
+          "PM2.5": 20.65,
+          "PM10": 22.26,
+          "NO": 19.03,
+          "NO2": 19.03,
+          "NOx": 10.65,
+          "NH3": 19.03,
+          "CO": 10.65,
+          "SO2": 17.42,
+          "O3": 18.06,
+          "Benzene": 10.65,
+          "Toluene": 10.97,
+          "Xylene": 100.0,
+          "AQI": 33.87,
+          "AQI_Bucket": 33.87
+        }
+      },
+      "Talcher": {
+        "row_count": 925,
+        "missing_percentages": {
+          "PM2.5": 19.89,
+          "PM10": 19.35,
+          "NO": 21.62,
+          "NO2": 24.0,
+          "NOx": 16.86,
+          "NH3": 20.11,
+          "CO": 16.0,
+          "SO2": 20.76,
+          "O3": 18.27,
+          "Benzene": 26.05,
+          "Toluene": 81.95,
+          "Xylene": 100.0,
+          "AQI": 24.54,
+          "AQI_Bucket": 24.54
+        }
+      },
+      "Thiruvananthapuram": {
+        "row_count": 1112,
+        "missing_percentages": {
+          "PM2.5": 3.78,
+          "PM10": 3.42,
+          "NO": 2.79,
+          "NO2": 2.79,
+          "NOx": 1.44,
+          "NH3": 10.16,
+          "CO": 1.44,
+          "SO2": 2.79,
+          "O3": 2.79,
+          "Benzene": 100.0,
+          "Toluene": 100.0,
+          "Xylene": 100.0,
+          "AQI": 5.4,
+          "AQI_Bucket": 5.4
+        }
+      },
+      "Visakhapatnam": {
+        "row_count": 1462,
+        "missing_percentages": {
+          "PM2.5": 15.73,
+          "PM10": 16.14,
+          "NO": 15.46,
+          "NO2": 16.96,
+          "NOx": 2.6,
+          "NH3": 14.57,
+          "CO": 2.67,
+          "SO2": 15.53,
+          "O3": 15.66,
+          "Benzene": 2.6,
+          "Toluene": 2.6,
+          "Xylene": 2.6,
+          "AQI": 19.9,
+          "AQI_Bucket": 19.9
+        }
+      }
+    }
+  },
+  "duplicate_analysis": {
+    "duplicate_rows_count": 0,
+    "duplicate_city_date_count": 0
+  },
+  "outlier_analysis": {
+    "PM2.5": {
+      "valid_count": 24933,
+      "q25": 28.82,
+      "q75": 80.59,
+      "iqr": 51.77,
+      "lower_bound": -48.835,
+      "upper_bound": 158.245,
+      "outlier_count": 1982,
+      "outlier_percentage": 7.95
+    },
+    "PM10": {
+      "valid_count": 18391,
+      "q25": 56.255,
+      "q75": 149.745,
+      "iqr": 93.49,
+      "lower_bound": -83.98,
+      "upper_bound": 289.98,
+      "outlier_count": 1057,
+      "outlier_percentage": 5.75
+    },
+    "NO": {
+      "valid_count": 25949,
+      "q25": 5.63,
+      "q75": 19.95,
+      "iqr": 14.32,
+      "lower_bound": -15.85,
+      "upper_bound": 41.43,
+      "outlier_count": 2459,
+      "outlier_percentage": 9.48
+    },
+    "NO2": {
+      "valid_count": 25946,
+      "q25": 11.75,
+      "q75": 37.62,
+      "iqr": 25.87,
+      "lower_bound": -27.055,
+      "upper_bound": 76.425,
+      "outlier_count": 1188,
+      "outlier_percentage": 4.58
+    },
+    "NOx": {
+      "valid_count": 25346,
+      "q25": 12.82,
+      "q75": 40.1275,
+      "iqr": 27.3075,
+      "lower_bound": -28.1412,
+      "upper_bound": 81.0887,
+      "outlier_count": 1868,
+      "outlier_percentage": 7.37
+    },
+    "NH3": {
+      "valid_count": 19203,
+      "q25": 8.58,
+      "q75": 30.02,
+      "iqr": 21.44,
+      "lower_bound": -23.58,
+      "upper_bound": 62.18,
+      "outlier_count": 1015,
+      "outlier_percentage": 5.29
+    },
+    "CO": {
+      "valid_count": 27472,
+      "q25": 0.51,
+      "q75": 1.45,
+      "iqr": 0.94,
+      "lower_bound": -0.9,
+      "upper_bound": 2.86,
+      "outlier_count": 2475,
+      "outlier_percentage": 9.01
+    },
+    "SO2": {
+      "valid_count": 25677,
+      "q25": 5.67,
+      "q75": 15.22,
+      "iqr": 9.55,
+      "lower_bound": -8.655,
+      "upper_bound": 29.545,
+      "outlier_count": 2578,
+      "outlier_percentage": 10.04
+    },
+    "O3": {
+      "valid_count": 25509,
+      "q25": 18.86,
+      "q75": 45.57,
+      "iqr": 26.71,
+      "lower_bound": -21.205,
+      "upper_bound": 85.635,
+      "outlier_count": 713,
+      "outlier_percentage": 2.8
+    },
+    "Benzene": {
+      "valid_count": 23908,
+      "q25": 0.12,
+      "q75": 3.08,
+      "iqr": 2.96,
+      "lower_bound": -4.32,
+      "upper_bound": 7.52,
+      "outlier_count": 1668,
+      "outlier_percentage": 6.98
+    },
+    "Toluene": {
+      "valid_count": 21490,
+      "q25": 0.6,
+      "q75": 9.15,
+      "iqr": 8.55,
+      "lower_bound": -12.225,
+      "upper_bound": 21.975,
+      "outlier_count": 2427,
+      "outlier_percentage": 11.29
+    },
+    "Xylene": {
+      "valid_count": 11422,
+      "q25": 0.14,
+      "q75": 3.35,
+      "iqr": 3.21,
+      "lower_bound": -4.675,
+      "upper_bound": 8.165,
+      "outlier_count": 1119,
+      "outlier_percentage": 9.8
+    },
+    "AQI": {
+      "valid_count": 24850,
+      "q25": 81.0,
+      "q75": 208.0,
+      "iqr": 127.0,
+      "lower_bound": -109.5,
+      "upper_bound": 398.5,
+      "outlier_count": 1358,
+      "outlier_percentage": 5.46
+    }
+  },
+  "city_level_statistics": {
+    "Ahmedabad": {
+      "observation_count": 2009,
+      "aqi_valid_count": 1334,
+      "aqi_missing_count": 675,
+      "aqi_mean": 452.12,
+      "aqi_median": 384.5,
+      "aqi_std": 311.73,
+      "aqi_min": 48.0,
+      "aqi_max": 2049.0
+    },
+    "Aizawl": {
+      "observation_count": 113,
+      "aqi_valid_count": 111,
+      "aqi_missing_count": 2,
+      "aqi_mean": 34.77,
+      "aqi_median": 23.0,
+      "aqi_std": 19.97,
+      "aqi_min": 18.0,
+      "aqi_max": 92.0
+    },
+    "Amaravati": {
+      "observation_count": 951,
+      "aqi_valid_count": 841,
+      "aqi_missing_count": 110,
+      "aqi_mean": 95.3,
+      "aqi_median": 78.0,
+      "aqi_std": 56.06,
+      "aqi_min": 24.0,
+      "aqi_max": 312.0
+    },
+    "Amritsar": {
+      "observation_count": 1221,
+      "aqi_valid_count": 1126,
+      "aqi_missing_count": 95,
+      "aqi_mean": 119.92,
+      "aqi_median": 101.0,
+      "aqi_std": 76.97,
+      "aqi_min": 20.0,
+      "aqi_max": 869.0
+    },
+    "Bengaluru": {
+      "observation_count": 2009,
+      "aqi_valid_count": 1910,
+      "aqi_missing_count": 99,
+      "aqi_mean": 94.32,
+      "aqi_median": 86.0,
+      "aqi_std": 39.91,
+      "aqi_min": 20.0,
+      "aqi_max": 352.0
+    },
+    "Bhopal": {
+      "observation_count": 289,
+      "aqi_valid_count": 278,
+      "aqi_missing_count": 11,
+      "aqi_mean": 132.83,
+      "aqi_median": 120.0,
+      "aqi_std": 56.0,
+      "aqi_min": 37.0,
+      "aqi_max": 312.0
+    },
+    "Brajrajnagar": {
+      "observation_count": 938,
+      "aqi_valid_count": 713,
+      "aqi_missing_count": 225,
+      "aqi_mean": 150.28,
+      "aqi_median": 122.0,
+      "aqi_std": 70.37,
+      "aqi_min": 22.0,
+      "aqi_max": 355.0
+    },
+    "Chandigarh": {
+      "observation_count": 304,
+      "aqi_valid_count": 299,
+      "aqi_missing_count": 5,
+      "aqi_mean": 96.5,
+      "aqi_median": 82.0,
+      "aqi_std": 57.18,
+      "aqi_min": 26.0,
+      "aqi_max": 335.0
+    },
+    "Chennai": {
+      "observation_count": 2009,
+      "aqi_valid_count": 1884,
+      "aqi_missing_count": 125,
+      "aqi_mean": 114.5,
+      "aqi_median": 100.0,
+      "aqi_std": 51.97,
+      "aqi_min": 30.0,
+      "aqi_max": 449.0
+    },
+    "Coimbatore": {
+      "observation_count": 386,
+      "aqi_valid_count": 344,
+      "aqi_missing_count": 42,
+      "aqi_mean": 73.02,
+      "aqi_median": 75.0,
+      "aqi_std": 18.06,
+      "aqi_min": 26.0,
+      "aqi_max": 120.0
+    },
+    "Delhi": {
+      "observation_count": 2009,
+      "aqi_valid_count": 1999,
+      "aqi_missing_count": 10,
+      "aqi_mean": 259.49,
+      "aqi_median": 257.0,
+      "aqi_std": 119.54,
+      "aqi_min": 29.0,
+      "aqi_max": 716.0
+    },
+    "Ernakulam": {
+      "observation_count": 162,
+      "aqi_valid_count": 153,
+      "aqi_missing_count": 9,
+      "aqi_mean": 92.36,
+      "aqi_median": 94.0,
+      "aqi_std": 19.39,
+      "aqi_min": 55.0,
+      "aqi_max": 180.0
+    },
+    "Gurugram": {
+      "observation_count": 1679,
+      "aqi_valid_count": 1453,
+      "aqi_missing_count": 226,
+      "aqi_mean": 225.12,
+      "aqi_median": 208.0,
+      "aqi_std": 119.94,
+      "aqi_min": 38.0,
+      "aqi_max": 891.0
+    },
+    "Guwahati": {
+      "observation_count": 502,
+      "aqi_valid_count": 495,
+      "aqi_missing_count": 7,
+      "aqi_mean": 140.11,
+      "aqi_median": 98.0,
+      "aqi_std": 112.76,
+      "aqi_min": 25.0,
+      "aqi_max": 956.0
+    },
+    "Hyderabad": {
+      "observation_count": 2006,
+      "aqi_valid_count": 1880,
+      "aqi_missing_count": 126,
+      "aqi_mean": 109.21,
+      "aqi_median": 104.0,
+      "aqi_std": 53.14,
+      "aqi_min": 22.0,
+      "aqi_max": 737.0
+    },
+    "Jaipur": {
+      "observation_count": 1114,
+      "aqi_valid_count": 1094,
+      "aqi_missing_count": 20,
+      "aqi_mean": 133.68,
+      "aqi_median": 122.0,
+      "aqi_std": 54.31,
+      "aqi_min": 43.0,
+      "aqi_max": 457.0
+    },
+    "Jorapokhar": {
+      "observation_count": 1169,
+      "aqi_valid_count": 771,
+      "aqi_missing_count": 398,
+      "aqi_mean": 159.25,
+      "aqi_median": 133.0,
+      "aqi_std": 84.7,
+      "aqi_min": 27.0,
+      "aqi_max": 604.0
+    },
+    "Kochi": {
+      "observation_count": 162,
+      "aqi_valid_count": 158,
+      "aqi_missing_count": 4,
+      "aqi_mean": 104.28,
+      "aqi_median": 99.0,
+      "aqi_std": 34.05,
+      "aqi_min": 51.0,
+      "aqi_max": 277.0
+    },
+    "Kolkata": {
+      "observation_count": 814,
+      "aqi_valid_count": 754,
+      "aqi_missing_count": 60,
+      "aqi_mean": 140.57,
+      "aqi_median": 94.0,
+      "aqi_std": 104.49,
+      "aqi_min": 26.0,
+      "aqi_max": 475.0
+    },
+    "Lucknow": {
+      "observation_count": 2009,
+      "aqi_valid_count": 1893,
+      "aqi_missing_count": 116,
+      "aqi_mean": 217.97,
+      "aqi_median": 198.0,
+      "aqi_std": 116.96,
+      "aqi_min": 39.0,
+      "aqi_max": 707.0
+    },
+    "Mumbai": {
+      "observation_count": 2009,
+      "aqi_valid_count": 775,
+      "aqi_missing_count": 1234,
+      "aqi_mean": 105.35,
+      "aqi_median": 91.0,
+      "aqi_std": 47.41,
+      "aqi_min": 40.0,
+      "aqi_max": 307.0
+    },
+    "Patna": {
+      "observation_count": 1858,
+      "aqi_valid_count": 1459,
+      "aqi_missing_count": 399,
+      "aqi_mean": 240.78,
+      "aqi_median": 215.0,
+      "aqi_std": 122.34,
+      "aqi_min": 53.0,
+      "aqi_max": 619.0
+    },
+    "Shillong": {
+      "observation_count": 310,
+      "aqi_valid_count": 205,
+      "aqi_missing_count": 105,
+      "aqi_mean": 53.8,
+      "aqi_median": 48.0,
+      "aqi_std": 28.4,
+      "aqi_min": 14.0,
+      "aqi_max": 182.0
+    },
+    "Talcher": {
+      "observation_count": 925,
+      "aqi_valid_count": 698,
+      "aqi_missing_count": 227,
+      "aqi_mean": 172.89,
+      "aqi_median": 128.5,
+      "aqi_std": 104.87,
+      "aqi_min": 13.0,
+      "aqi_max": 570.0
+    },
+    "Thiruvananthapuram": {
+      "observation_count": 1112,
+      "aqi_valid_count": 1052,
+      "aqi_missing_count": 60,
+      "aqi_mean": 75.88,
+      "aqi_median": 68.0,
+      "aqi_std": 28.4,
+      "aqi_min": 32.0,
+      "aqi_max": 230.0
+    },
+    "Visakhapatnam": {
+      "observation_count": 1462,
+      "aqi_valid_count": 1171,
+      "aqi_missing_count": 291,
+      "aqi_mean": 117.27,
+      "aqi_median": 106.0,
+      "aqi_std": 54.89,
+      "aqi_min": 23.0,
+      "aqi_max": 387.0
+    }
+  },
+  "pollutant_summary_statistics": {
+    "PM2.5": {
+      "valid_count": 24933,
+      "mean": 67.4506,
+      "std": 64.6614,
+      "min": 0.04,
+      "p5": 13.206,
+      "p25": 28.82,
+      "median": 48.57,
+      "p75": 80.59,
+      "p95": 193.96,
+      "p99": 311.064,
+      "max": 949.99,
+      "skewness": 3.37
+    },
+    "PM10": {
+      "valid_count": 18391,
+      "mean": 118.1271,
+      "std": 90.6051,
+      "min": 0.01,
+      "p5": 26.365,
+      "p25": 56.255,
+      "median": 95.68,
+      "p75": 149.745,
+      "p95": 303.34,
+      "p99": 444.609,
+      "max": 1000.0,
+      "skewness": 2.0532
+    },
+    "NO": {
+      "valid_count": 25949,
+      "mean": 17.5747,
+      "std": 22.7858,
+      "min": 0.02,
+      "p5": 1.7,
+      "p25": 5.63,
+      "median": 9.89,
+      "p75": 19.95,
+      "p95": 61.19,
+      "p99": 116.2768,
+      "max": 390.68,
+      "skewness": 3.8832
+    },
+    "NO2": {
+      "valid_count": 25946,
+      "mean": 28.5607,
+      "std": 24.4747,
+      "min": 0.01,
+      "p5": 4.93,
+      "p25": 11.75,
+      "median": 21.69,
+      "p75": 37.62,
+      "p95": 74.125,
+      "p99": 117.124,
+      "max": 362.21,
+      "skewness": 2.4646
+    },
+    "NOx": {
+      "valid_count": 25346,
+      "mean": 32.3091,
+      "std": 31.646,
+      "min": 0.0,
+      "p5": 2.4,
+      "p25": 12.82,
+      "median": 23.52,
+      "p75": 40.1275,
+      "p95": 96.3575,
+      "p99": 154.253,
+      "max": 467.63,
+      "skewness": 2.5699
+    },
+    "NH3": {
+      "valid_count": 19203,
+      "mean": 23.4835,
+      "std": 25.6843,
+      "min": 0.01,
+      "p5": 2.74,
+      "p25": 8.58,
+      "median": 15.85,
+      "p75": 30.02,
+      "p95": 63.427,
+      "p99": 130.556,
+      "max": 352.89,
+      "skewness": 4.084
+    },
+    "CO": {
+      "valid_count": 27472,
+      "mean": 2.2486,
+      "std": 6.9629,
+      "min": 0.0,
+      "p5": 0.0,
+      "p25": 0.51,
+      "median": 0.89,
+      "p75": 1.45,
+      "p95": 8.0245,
+      "p99": 34.5316,
+      "max": 175.81,
+      "skewness": 8.8783
+    },
+    "SO2": {
+      "valid_count": 25677,
+      "mean": 14.532,
+      "std": 18.1338,
+      "min": 0.01,
+      "p5": 2.63,
+      "p25": 5.67,
+      "median": 9.16,
+      "p75": 15.22,
+      "p95": 46.208,
+      "p99": 102.6792,
+      "max": 193.86,
+      "skewness": 4.0837
+    },
+    "O3": {
+      "valid_count": 25509,
+      "mean": 34.4914,
+      "std": 21.6949,
+      "min": 0.01,
+      "p5": 7.02,
+      "p25": 18.86,
+      "median": 30.84,
+      "p75": 45.57,
+      "p95": 74.142,
+      "p99": 105.3212,
+      "max": 257.73,
+      "skewness": 1.3301
+    },
+    "Benzene": {
+      "valid_count": 23908,
+      "mean": 3.2808,
+      "std": 15.8111,
+      "min": 0.0,
+      "p5": 0.0,
+      "p25": 0.12,
+      "median": 1.07,
+      "p75": 3.08,
+      "p95": 9.72,
+      "p99": 28.6793,
+      "max": 455.03,
+      "skewness": 21.3042
+    },
+    "Toluene": {
+      "valid_count": 21490,
+      "mean": 8.701,
+      "std": 19.9692,
+      "min": 0.0,
+      "p5": 0.0,
+      "p25": 0.6,
+      "median": 2.97,
+      "p75": 9.15,
+      "p95": 33.92,
+      "p99": 72.4699,
+      "max": 454.85,
+      "skewness": 11.6661
+    },
+    "Xylene": {
+      "valid_count": 11422,
+      "mean": 3.0701,
+      "std": 6.3232,
+      "min": 0.0,
+      "p5": 0.0,
+      "p25": 0.14,
+      "median": 0.98,
+      "p75": 3.35,
+      "p95": 12.558,
+      "p99": 26.6679,
+      "max": 170.37,
+      "skewness": 7.8915
+    }
+  },
+  "aqi_distribution_summary": {
+    "valid_count": 24850,
+    "missing_count": 4681,
+    "mean": 166.46,
+    "median": 118.0,
+    "std": 140.7,
+    "min": 13.0,
+    "p5": 50.0,
+    "p25": 81.0,
+    "p50": 118.0,
+    "p75": 208.0,
+    "p90": 341.0,
+    "p95": 407.0,
+    "p99": 661.51,
+    "max": 2049.0,
+    "iqr": 127.0,
+    "skewness": 3.3968,
+    "bucket_distribution": {
+      "Moderate": 8829,
+      "Satisfactory": 8224,
+      "Missing": 4681,
+      "Poor": 2781,
+      "Very Poor": 2337,
+      "Good": 1341,
+      "Severe": 1338
+    }
+  },
+  "temporal_statistics": {
+    "yearly_aqi_stats": {
+      "2015": {
+        "count": 1827,
+        "mean": 212.46,
+        "median": 175.0,
+        "std": 133.12,
+        "min": 31.0,
+        "max": 1247.0
+      },
+      "2016": {
+        "count": 2573,
+        "mean": 197.15,
+        "median": 149.0,
+        "std": 130.5,
+        "min": 20.0,
+        "max": 1842.0
+      },
+      "2017": {
+        "count": 3234,
+        "mean": 181.47,
+        "median": 129.0,
+        "std": 141.39,
+        "min": 26.0,
+        "max": 1747.0
+      },
+      "2018": {
+        "count": 5724,
+        "mean": 182.68,
+        "median": 124.0,
+        "std": 171.55,
+        "min": 13.0,
+        "max": 2049.0
+      },
+      "2019": {
+        "count": 7071,
+        "mean": 156.52,
+        "median": 109.0,
+        "std": 135.75,
+        "min": 14.0,
+        "max": 1719.0
+      },
+      "2020": {
+        "count": 4421,
+        "mean": 113.52,
+        "median": 93.0,
+        "std": 83.45,
+        "min": 14.0,
+        "max": 1291.0
+      }
+    },
+    "monthly_aqi_stats": {
+      "1": {
+        "count": 2141,
+        "mean": 231.67,
+        "median": 183.0,
+        "std": 160.7
+      },
+      "2": {
+        "count": 2078,
+        "mean": 202.91,
+        "median": 149.5,
+        "std": 164.92
+      },
+      "3": {
+        "count": 2327,
+        "mean": 164.74,
+        "median": 124.0,
+        "std": 138.09
+      },
+      "4": {
+        "count": 2295,
+        "mean": 143.36,
+        "median": 111.0,
+        "std": 115.05
+      },
+      "5": {
+        "count": 2447,
+        "mean": 135.49,
+        "median": 111.0,
+        "std": 90.61
+      },
+      "6": {
+        "count": 2344,
+        "mean": 120.2,
+        "median": 96.0,
+        "std": 92.68
+      },
+      "7": {
+        "count": 1836,
+        "mean": 111.85,
+        "median": 86.0,
+        "std": 100.91
+      },
+      "8": {
+        "count": 1776,
+        "mean": 113.61,
+        "median": 85.0,
+        "std": 99.33
+      },
+      "9": {
+        "count": 1757,
+        "mean": 115.19,
+        "median": 88.0,
+        "std": 94.15
+      },
+      "10": {
+        "count": 1889,
+        "mean": 188.61,
+        "median": 130.0,
+        "std": 160.72
+      },
+      "11": {
+        "count": 1936,
+        "mean": 241.68,
+        "median": 185.0,
+        "std": 187.68
+      },
+      "12": {
+        "count": 2024,
+        "mean": 227.08,
+        "median": 182.0,
+        "std": 143.55
+      }
+    }
+  },
+  "correlation_analysis": {
+    "aqi_correlations": {
+      "PM2.5": {
+        "pearson_r": 0.6592,
+        "spearman_rho": 0.8462,
+        "pairwise_observations": 24172
+      },
+      "PM10": {
+        "pearson_r": 0.8033,
+        "spearman_rho": 0.8706,
+        "pairwise_observations": 17764
+      },
+      "NO": {
+        "pearson_r": 0.4522,
+        "spearman_rho": 0.4701,
+        "pairwise_observations": 24463
+      },
+      "NO2": {
+        "pearson_r": 0.5371,
+        "spearman_rho": 0.4623,
+        "pairwise_observations": 24459
+      },
+      "NOx": {
+        "pearson_r": 0.4865,
+        "spearman_rho": 0.4847,
+        "pairwise_observations": 22993
+      },
+      "NH3": {
+        "pearson_r": 0.252,
+        "spearman_rho": 0.3665,
+        "pairwise_observations": 18314
+      },
+      "CO": {
+        "pearson_r": 0.6833,
+        "spearman_rho": 0.5494,
+        "pairwise_observations": 24405
+      },
+      "SO2": {
+        "pearson_r": 0.4906,
+        "spearman_rho": 0.3793,
+        "pairwise_observations": 24245
+      },
+      "O3": {
+        "pearson_r": 0.199,
+        "spearman_rho": 0.2809,
+        "pairwise_observations": 24043
+      },
+      "Benzene": {
+        "pearson_r": 0.0444,
+        "spearman_rho": 0.2554,
+        "pairwise_observations": 21315
+      },
+      "Toluene": {
+        "pearson_r": 0.28,
+        "spearman_rho": 0.3672,
+        "pairwise_observations": 19024
+      },
+      "Xylene": {
+        "pearson_r": 0.1655,
+        "spearman_rho": 0.1763,
+        "pairwise_observations": 9478
+      }
+    },
+    "pearson_matrix": {
+      "PM2.5": {
+        "PM2.5": 1.0,
+        "PM10": 0.8465,
+        "NO": 0.4335,
+        "NO2": 0.3507,
+        "NOx": 0.4368,
+        "NH3": 0.2751,
+        "CO": 0.0899,
+        "SO2": 0.1323,
+        "O3": 0.1612,
+        "Benzene": 0.0239,
+        "Toluene": 0.1171,
+        "Xylene": 0.1146,
+        "AQI": 0.6592
+      },
+      "PM10": {
+        "PM2.5": 0.8465,
+        "PM10": 1.0,
+        "NO": 0.5023,
+        "NO2": 0.4644,
+        "NOx": 0.5278,
+        "NH3": 0.3768,
+        "CO": 0.1126,
+        "SO2": 0.257,
+        "O3": 0.2449,
+        "Benzene": 0.0223,
+        "Toluene": 0.1693,
+        "Xylene": 0.0817,
+        "AQI": 0.8033
+      },
+      "NO": {
+        "PM2.5": 0.4335,
+        "PM10": 0.5023,
+        "NO": 1.0,
+        "NO2": 0.4781,
+        "NOx": 0.7949,
+        "NH3": 0.1856,
+        "CO": 0.2126,
+        "SO2": 0.1703,
+        "O3": 0.0146,
+        "Benzene": 0.0358,
+        "Toluene": 0.1509,
+        "Xylene": 0.0942,
+        "AQI": 0.4522
+      },
+      "NO2": {
+        "PM2.5": 0.3507,
+        "PM10": 0.4644,
+        "NO": 0.4781,
+        "NO2": 1.0,
+        "NOx": 0.6276,
+        "NH3": 0.2349,
+        "CO": 0.3565,
+        "SO2": 0.3922,
+        "O3": 0.2933,
+        "Benzene": 0.0253,
+        "Toluene": 0.2739,
+        "Xylene": 0.1717,
+        "AQI": 0.5371
+      },
+      "NOx": {
+        "PM2.5": 0.4368,
+        "PM10": 0.5278,
+        "NO": 0.7949,
+        "NO2": 0.6276,
+        "NOx": 1.0,
+        "NH3": 0.1662,
+        "CO": 0.227,
+        "SO2": 0.2384,
+        "O3": 0.0932,
+        "Benzene": 0.0391,
+        "Toluene": 0.1894,
+        "Xylene": 0.0874,
+        "AQI": 0.4865
+      },
+      "NH3": {
+        "PM2.5": 0.2751,
+        "PM10": 0.3768,
+        "NO": 0.1856,
+        "NO2": 0.2349,
+        "NOx": 0.1662,
+        "NH3": 1.0,
+        "CO": 0.1049,
+        "SO2": -0.039,
+        "O3": 0.095,
+        "Benzene": -0.0157,
+        "Toluene": 0.0132,
+        "Xylene": -0.0198,
+        "AQI": 0.252
+      },
+      "CO": {
+        "PM2.5": 0.0899,
+        "PM10": 0.1126,
+        "NO": 0.2126,
+        "NO2": 0.3565,
+        "NOx": 0.227,
+        "NH3": 0.1049,
+        "CO": 1.0,
+        "SO2": 0.4897,
+        "O3": 0.0417,
+        "Benzene": 0.0619,
+        "Toluene": 0.2779,
+        "Xylene": 0.1549,
+        "AQI": 0.6833
+      },
+      "SO2": {
+        "PM2.5": 0.1323,
+        "PM10": 0.257,
+        "NO": 0.1703,
+        "NO2": 0.3922,
+        "NOx": 0.2384,
+        "NH3": -0.039,
+        "CO": 0.4897,
+        "SO2": 1.0,
+        "O3": 0.1621,
+        "Benzene": 0.0361,
+        "Toluene": 0.2961,
+        "Xylene": 0.2512,
+        "AQI": 0.4906
+      },
+      "O3": {
+        "PM2.5": 0.1612,
+        "PM10": 0.2449,
+        "NO": 0.0146,
+        "NO2": 0.2933,
+        "NOx": 0.0932,
+        "NH3": 0.095,
+        "CO": 0.0417,
+        "SO2": 0.1621,
+        "O3": 1.0,
+        "Benzene": 0.0203,
+        "Toluene": 0.1302,
+        "Xylene": 0.1114,
+        "AQI": 0.199
+      },
+      "Benzene": {
+        "PM2.5": 0.0239,
+        "PM10": 0.0223,
+        "NO": 0.0358,
+        "NO2": 0.0253,
+        "NOx": 0.0391,
+        "NH3": -0.0157,
+        "CO": 0.0619,
+        "SO2": 0.0361,
+        "O3": 0.0203,
+        "Benzene": 1.0,
+        "Toluene": 0.7393,
+        "Xylene": 0.4154,
+        "AQI": 0.0444
+      },
+      "Toluene": {
+        "PM2.5": 0.1171,
+        "PM10": 0.1693,
+        "NO": 0.1509,
+        "NO2": 0.2739,
+        "NOx": 0.1894,
+        "NH3": 0.0132,
+        "CO": 0.2779,
+        "SO2": 0.2961,
+        "O3": 0.1302,
+        "Benzene": 0.7393,
+        "Toluene": 1.0,
+        "Xylene": 0.4214,
+        "AQI": 0.28
+      },
+      "Xylene": {
+        "PM2.5": 0.1146,
+        "PM10": 0.0817,
+        "NO": 0.0942,
+        "NO2": 0.1717,
+        "NOx": 0.0874,
+        "NH3": -0.0198,
+        "CO": 0.1549,
+        "SO2": 0.2512,
+        "O3": 0.1114,
+        "Benzene": 0.4154,
+        "Toluene": 0.4214,
+        "Xylene": 1.0,
+        "AQI": 0.1655
+      },
+      "AQI": {
+        "PM2.5": 0.6592,
+        "PM10": 0.8033,
+        "NO": 0.4522,
+        "NO2": 0.5371,
+        "NOx": 0.4865,
+        "NH3": 0.252,
+        "CO": 0.6833,
+        "SO2": 0.4906,
+        "O3": 0.199,
+        "Benzene": 0.0444,
+        "Toluene": 0.28,
+        "Xylene": 0.1655,
+        "AQI": 1.0
+      }
+    },
+    "spearman_matrix": {
+      "PM2.5": {
+        "PM2.5": 1.0,
+        "PM10": 0.88,
+        "NO": 0.4272,
+        "NO2": 0.4601,
+        "NOx": 0.4393,
+        "NH3": 0.3904,
+        "CO": 0.3812,
+        "SO2": 0.2778,
+        "O3": 0.2709,
+        "Benzene": 0.2213,
+        "Toluene": 0.2834,
+        "Xylene": 0.2035,
+        "AQI": 0.8462
+      },
+      "PM10": {
+        "PM2.5": 0.88,
+        "PM10": 1.0,
+        "NO": 0.5096,
+        "NO2": 0.5098,
+        "NOx": 0.541,
+        "NH3": 0.3815,
+        "CO": 0.3306,
+        "SO2": 0.401,
+        "O3": 0.2836,
+        "Benzene": 0.3112,
+        "Toluene": 0.4039,
+        "Xylene": 0.1851,
+        "AQI": 0.8706
+      },
+      "NO": {
+        "PM2.5": 0.4272,
+        "PM10": 0.5096,
+        "NO": 1.0,
+        "NO2": 0.4832,
+        "NOx": 0.7564,
+        "NH3": 0.3472,
+        "CO": 0.355,
+        "SO2": 0.3412,
+        "O3": -0.0598,
+        "Benzene": 0.2557,
+        "Toluene": 0.2499,
+        "Xylene": 0.2645,
+        "AQI": 0.4701
+      },
+      "NO2": {
+        "PM2.5": 0.4601,
+        "PM10": 0.5098,
+        "NO": 0.4832,
+        "NO2": 1.0,
+        "NOx": 0.6503,
+        "NH3": 0.4817,
+        "CO": 0.2754,
+        "SO2": 0.2465,
+        "O3": 0.3109,
+        "Benzene": 0.3401,
+        "Toluene": 0.4168,
+        "Xylene": 0.2481,
+        "AQI": 0.4623
+      },
+      "NOx": {
+        "PM2.5": 0.4393,
+        "PM10": 0.541,
+        "NO": 0.7564,
+        "NO2": 0.6503,
+        "NOx": 1.0,
+        "NH3": 0.3178,
+        "CO": 0.3339,
+        "SO2": 0.3511,
+        "O3": 0.0401,
+        "Benzene": 0.2731,
+        "Toluene": 0.3142,
+        "Xylene": 0.2441,
+        "AQI": 0.4847
+      },
+      "NH3": {
+        "PM2.5": 0.3904,
+        "PM10": 0.3815,
+        "NO": 0.3472,
+        "NO2": 0.4817,
+        "NOx": 0.3178,
+        "NH3": 1.0,
+        "CO": 0.2409,
+        "SO2": 0.0835,
+        "O3": 0.202,
+        "Benzene": 0.1221,
+        "Toluene": 0.1152,
+        "Xylene": -0.1073,
+        "AQI": 0.3665
+      },
+      "CO": {
+        "PM2.5": 0.3812,
+        "PM10": 0.3306,
+        "NO": 0.355,
+        "NO2": 0.2754,
+        "NOx": 0.3339,
+        "NH3": 0.2409,
+        "CO": 1.0,
+        "SO2": 0.2605,
+        "O3": 0.0677,
+        "Benzene": 0.2695,
+        "Toluene": 0.3908,
+        "Xylene": 0.3819,
+        "AQI": 0.5494
+      },
+      "SO2": {
+        "PM2.5": 0.2778,
+        "PM10": 0.401,
+        "NO": 0.3412,
+        "NO2": 0.2465,
+        "NOx": 0.3511,
+        "NH3": 0.0835,
+        "CO": 0.2605,
+        "SO2": 1.0,
+        "O3": 0.1986,
+        "Benzene": 0.1696,
+        "Toluene": 0.3208,
+        "Xylene": 0.248,
+        "AQI": 0.3793
+      },
+      "O3": {
+        "PM2.5": 0.2709,
+        "PM10": 0.2836,
+        "NO": -0.0598,
+        "NO2": 0.3109,
+        "NOx": 0.0401,
+        "NH3": 0.202,
+        "CO": 0.0677,
+        "SO2": 0.1986,
+        "O3": 1.0,
+        "Benzene": 0.1578,
+        "Toluene": 0.2439,
+        "Xylene": 0.1036,
+        "AQI": 0.2809
+      },
+      "Benzene": {
+        "PM2.5": 0.2213,
+        "PM10": 0.3112,
+        "NO": 0.2557,
+        "NO2": 0.3401,
+        "NOx": 0.2731,
+        "NH3": 0.1221,
+        "CO": 0.2695,
+        "SO2": 0.1696,
+        "O3": 0.1578,
+        "Benzene": 1.0,
+        "Toluene": 0.7976,
+        "Xylene": 0.7517,
+        "AQI": 0.2554
+      },
+      "Toluene": {
+        "PM2.5": 0.2834,
+        "PM10": 0.4039,
+        "NO": 0.2499,
+        "NO2": 0.4168,
+        "NOx": 0.3142,
+        "NH3": 0.1152,
+        "CO": 0.3908,
+        "SO2": 0.3208,
+        "O3": 0.2439,
+        "Benzene": 0.7976,
+        "Toluene": 1.0,
+        "Xylene": 0.6479,
+        "AQI": 0.3672
+      },
+      "Xylene": {
+        "PM2.5": 0.2035,
+        "PM10": 0.1851,
+        "NO": 0.2645,
+        "NO2": 0.2481,
+        "NOx": 0.2441,
+        "NH3": -0.1073,
+        "CO": 0.3819,
+        "SO2": 0.248,
+        "O3": 0.1036,
+        "Benzene": 0.7517,
+        "Toluene": 0.6479,
+        "Xylene": 1.0,
+        "AQI": 0.1763
+      },
+      "AQI": {
+        "PM2.5": 0.8462,
+        "PM10": 0.8706,
+        "NO": 0.4701,
+        "NO2": 0.4623,
+        "NOx": 0.4847,
+        "NH3": 0.3665,
+        "CO": 0.5494,
+        "SO2": 0.3793,
+        "O3": 0.2809,
+        "Benzene": 0.2554,
+        "Toluene": 0.3672,
+        "Xylene": 0.1763,
+        "AQI": 1.0
+      }
+    }
+  }
+}

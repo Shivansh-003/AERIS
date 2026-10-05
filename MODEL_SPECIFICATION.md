@@ -260,6 +260,6 @@ To isolate and prove the contribution of every architectural component, the foll
       "epoch": best_epoch,
       "val_rmse": best_val_rmse,
       "scaler_metadata": scaler_meta,
-      "timestamp": "2026-09-27T18:00:00Z"
+      "timestamp": "2026-09-27T18:00:00Z",
   }
   ```

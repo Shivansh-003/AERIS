@@ -56,7 +56,7 @@ flowchart TD
 ---
 
 ### Milestone 3 — Data Acquisition and Validation
-* **Status:** `Pending`
+* **Status:** `Complete`
 * **Objective:** Ingest, validate, and store the historical multi-city Indian air quality dataset.
 * **Key Tasks:**
   1. Ingest `city_day.csv` into `data/raw/`.
@@ -70,8 +70,8 @@ flowchart TD
 ---
 
 ### Milestone 4 — Data Preparation
-* **Status:** `Pending`
-* **Objective:** Implement leak-free chronological partitioning, city-aware missing value imputation, and 30-day temporal sequence generation.
+* **Status:** `Complete`
+* **Objective:** Implement leak-free chronological partitioning, city-aware missing value imputation, and StandardScaler normalization.
 * **Key Tasks:**
   1. Partition data chronologically (70% Train, 15% Validation, 15% Test) strictly within individual cities.
   2. Fit scalers (`RobustScaler` / `MinMaxScaler`) strictly on the training partition; serialize to `artifacts/scalers/`.

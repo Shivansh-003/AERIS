@@ -15,9 +15,7 @@ class HealthResponse(BaseModel):
     environment: str = Field(
         default="development", description="Current runtime environment"
     )
-    uptime_seconds: float = Field(
-        ..., description="Seconds since application startup"
-    )
+    uptime_seconds: float = Field(..., description="Seconds since application startup")
     timestamp: str = Field(
         default_factory=lambda: datetime.now(timezone.utc).isoformat(),
         description="Current server UTC timestamp",

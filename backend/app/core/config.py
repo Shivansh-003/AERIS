@@ -34,9 +34,7 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> List[str]:
         return [
-            origin.strip()
-            for origin in self.CORS_ORIGINS.split(",")
-            if origin.strip()
+            origin.strip() for origin in self.CORS_ORIGINS.split(",") if origin.strip()
         ]
 
 

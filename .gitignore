@@ -34,6 +34,7 @@ env/
 .mypy_cache/
 .coverage
 htmlcov/
+.ipynb_checkpoints/
 
 # Node / Next.js
 frontend/node_modules/

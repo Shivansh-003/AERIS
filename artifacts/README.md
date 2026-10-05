@@ -1,6 +1,6 @@
 # AERIS Model & Preprocessing Artifacts
 
-This directory stores serialized models, scalers, and evaluation metrics produced across modeling phases.
+This directory stores serialized models, scalers, and evaluation metrics produced across modeling and preprocessing workflows.
 
 ## Subdirectories (Generated During Training)
 
